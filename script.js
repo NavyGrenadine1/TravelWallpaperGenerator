@@ -917,15 +917,13 @@ overlayDarknessInput.addEventListener('input', (e) => {
     darknessValueSpan.textContent = `${e.target.value}%`;
 });
 
-// Handle custom background image upload
-customBgFile.addEventListener('change', async (e) => {
-    const file = e.target.files[0];
+// Handle custom background image upload (shared function for both inputs)
+async function handleImageUpload(file) {
     if (!file) return;
     
     // Validate file type
     if (!file.type.match('image.*')) {
         showError('Please upload an image file (JPG, PNG, WebP)');
-        customBgFile.value = '';
         return;
     }
     
@@ -952,14 +950,25 @@ customBgFile.addEventListener('change', async (e) => {
         
     } catch (error) {
         showError('Failed to load image. Please try another file.');
-        customBgFile.value = '';
     }
+}
+
+// Gallery file input
+customBgFile.addEventListener('change', async (e) => {
+    await handleImageUpload(e.target.files[0]);
+});
+
+// Camera file input
+const customBgCamera = document.getElementById('customBgCamera');
+customBgCamera.addEventListener('change', async (e) => {
+    await handleImageUpload(e.target.files[0]);
 });
 
 // Clear uploaded image
 clearImageBtn.addEventListener('click', () => {
     customBackgroundImage = null;
     customBgFile.value = '';
+    customBgCamera.value = '';
     imagePreview.style.display = 'none';
     previewImg.src = '';
 });
