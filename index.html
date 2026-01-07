@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Wallpaper Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Distinctive travel-inspired typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main App Container -->
+    <div class="app-container">
+        
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="title">Travel Reference</h1>
+            <p class="subtitle">Generate a lockscreen wallpaper with currency conversions</p>
+        </header>
+
+        <!-- Selection Form -->
+        <form class="selection-form" id="currencyForm">
+            
+            <!-- Home Currency Selection -->
+            <div class="form-group">
+                <label for="homeCurrency" class="form-label">
+                    <span class="label-icon">🏠</span>
+                    Your Currency
+                </label>
+                <select id="homeCurrency" class="form-select" required>
+                    <option value="">Select your currency</option>
+                    <option value="AED">🇦🇪 AED - UAE Dirham</option>
+                    <option value="ARS">🇦🇷 ARS - Argentine Peso</option>
+                    <option value="AUD">🇦🇺 AUD - Australian Dollar</option>
+                    <option value="BBD">🇧🇧 BBD - Barbadian Dollar</option>
+                    <option value="BGN">🇧🇬 BGN - Bulgarian Lev</option>
+                    <option value="BRL">🇧🇷 BRL - Brazilian Real</option>
+                    <option value="CAD">🇨🇦 CAD - Canadian Dollar</option>
+                    <option value="CHF">🇨🇭 CHF - Swiss Franc</option>
+                    <option value="CLP">🇨🇱 CLP - Chilean Peso</option>
+                    <option value="CNY">🇨🇳 CNY - Chinese Yuan</option>
+                    <option value="COP">🇨🇴 COP - Colombian Peso</option>
+                    <option value="CZK">🇨🇿 CZK - Czech Koruna</option>
+                    <option value="DKK">🇩🇰 DKK - Danish Krone</option>
+                    <option value="EGP">🇪🇬 EGP - Egyptian Pound</option>
+                    <option value="EUR">🇪🇺 EUR - Euro</option>
+                    <option value="FJD">🇫🇯 FJD - Fijian Dollar</option>
+                    <option value="GBP">🇬🇧 GBP - British Pound</option>
+                    <option value="HKD">🇭🇰 HKD - Hong Kong Dollar</option>
+                    <option value="HUF">🇭🇺 HUF - Hungarian Forint</option>
+                    <option value="IDR">🇮🇩 IDR - Indonesian Rupiah</option>
+                    <option value="ILS">🇮🇱 ILS - Israeli Shekel</option>
+                    <option value="INR">🇮🇳 INR - Indian Rupee</option>
+                    <option value="ISK">🇮🇸 ISK - Icelandic Króna</option>
+                    <option value="JMD">🇯🇲 JMD - Jamaican Dollar</option>
+                    <option value="JOD">🇯🇴 JOD - Jordanian Dinar</option>
+                    <option value="JPY">🇯🇵 JPY - Japanese Yen</option>
+                    <option value="KHR">🇰🇭 KHR - Cambodian Riel</option>
+                    <option value="KRW">🇰🇷 KRW - Korean Won</option>
+                    <option value="LKR">🇱🇰 LKR - Sri Lankan Rupee</option>
+                    <option value="MAD">🇲🇦 MAD - Moroccan Dirham</option>
+                    <option value="MXN">🇲🇽 MXN - Mexican Peso</option>
+                    <option value="MYR">🇲🇾 MYR - Malaysian Ringgit</option>
+                    <option value="NOK">🇳🇴 NOK - Norwegian Krone</option>
+                    <option value="NZD">🇳🇿 NZD - New Zealand Dollar</option>
+                    <option value="PEN">🇵🇪 PEN - Peruvian Sol</option>
+                    <option value="PHP">🇵🇭 PHP - Philippine Peso</option>
+                    <option value="PLN">🇵🇱 PLN - Polish Zloty</option>
+                    <option value="RON">🇷🇴 RON - Romanian Leu</option>
+                    <option value="RSD">🇷🇸 RSD - Serbian Dinar</option>
+                    <option value="SAR">🇸🇦 SAR - Saudi Riyal</option>
+                    <option value="SEK">🇸🇪 SEK - Swedish Krona</option>
+                    <option value="THB">🇹🇭 THB - Thai Baht</option>
+                    <option value="TRY">🇹🇷 TRY - Turkish Lira</option>
+                    <option value="TTD">🇹🇹 TTD - Trinidad & Tobago Dollar</option>
+                    <option value="USD">🇺🇸 USD - US Dollar</option>
+                    <option value="UYU">🇺🇾 UYU - Uruguayan Peso</option>
+                    <option value="VND">🇻🇳 VND - Vietnamese Dong</option>
+                    <option value="ZAR">🇿🇦 ZAR - South African Rand</option>
+                </select>
+            </div>
+
+            <!-- Destination Currency Selection -->
+            <div class="form-group">
+                <label for="destCurrency" class="form-label">
+                    <span class="label-icon">✈️</span>
+                    Visiting
+                </label>
+                <select id="destCurrency" class="form-select" required>
+                    <option value="">Select destination</option>
+                    <option value="AED">🇦🇪 AED - UAE Dirham</option>
+                    <option value="ARS">🇦🇷 ARS - Argentine Peso</option>
+                    <option value="AUD">🇦🇺 AUD - Australian Dollar</option>
+                    <option value="BBD">🇧🇧 BBD - Barbadian Dollar</option>
+                    <option value="BGN">🇧🇬 BGN - Bulgarian Lev</option>
+                    <option value="BRL">🇧🇷 BRL - Brazilian Real</option>
+                    <option value="CAD">🇨🇦 CAD - Canadian Dollar</option>
+                    <option value="CHF">🇨🇭 CHF - Swiss Franc</option>
+                    <option value="CLP">🇨🇱 CLP - Chilean Peso</option>
+                    <option value="CNY">🇨🇳 CNY - Chinese Yuan</option>
+                    <option value="COP">🇨🇴 COP - Colombian Peso</option>
+                    <option value="CZK">🇨🇿 CZK - Czech Koruna</option>
+                    <option value="DKK">🇩🇰 DKK - Danish Krone</option>
+                    <option value="EGP">🇪🇬 EGP - Egyptian Pound</option>
+                    <option value="EUR">🇪🇺 EUR - Euro</option>
+                    <option value="FJD">🇫🇯 FJD - Fijian Dollar</option>
+                    <option value="GBP">🇬🇧 GBP - British Pound</option>
+                    <option value="HKD">🇭🇰 HKD - Hong Kong Dollar</option>
+                    <option value="HUF">🇭🇺 HUF - Hungarian Forint</option>
+                    <option value="IDR">🇮🇩 IDR - Indonesian Rupiah</option>
+                    <option value="ILS">🇮🇱 ILS - Israeli Shekel</option>
+                    <option value="INR">🇮🇳 INR - Indian Rupee</option>
+                    <option value="ISK">🇮🇸 ISK - Icelandic Króna</option>
+                    <option value="JMD">🇯🇲 JMD - Jamaican Dollar</option>
+                    <option value="JOD">🇯🇴 JOD - Jordanian Dinar</option>
+                    <option value="JPY">🇯🇵 JPY - Japanese Yen</option>
+                    <option value="KHR">🇰🇭 KHR - Cambodian Riel</option>
+                    <option value="KRW">🇰🇷 KRW - Korean Won</option>
+                    <option value="LKR">🇱🇰 LKR - Sri Lankan Rupee</option>
+                    <option value="MAD">🇲🇦 MAD - Moroccan Dirham</option>
+                    <option value="MXN">🇲🇽 MXN - Mexican Peso</option>
+                    <option value="MYR">🇲🇾 MYR - Malaysian Ringgit</option>
+                    <option value="NOK">🇳🇴 NOK - Norwegian Krone</option>
+                    <option value="NZD">🇳🇿 NZD - New Zealand Dollar</option>
+                    <option value="PEN">🇵🇪 PEN - Peruvian Sol</option>
+                    <option value="PHP">🇵🇭 PHP - Philippine Peso</option>
+                    <option value="PLN">🇵🇱 PLN - Polish Zloty</option>
+                    <option value="RON">🇷🇴 RON - Romanian Leu</option>
+                    <option value="RSD">🇷🇸 RSD - Serbian Dinar</option>
+                    <option value="SAR">🇸🇦 SAR - Saudi Riyal</option>
+                    <option value="SEK">🇸🇪 SEK - Swedish Krona</option>
+                    <option value="THB">🇹🇭 THB - Thai Baht</option>
+                    <option value="TRY">🇹🇷 TRY - Turkish Lira</option>
+                    <option value="TTD">🇹🇹 TTD - Trinidad & Tobago Dollar</option>
+                    <option value="USD">🇺🇸 USD - US Dollar</option>
+                    <option value="UYU">🇺🇾 UYU - Uruguayan Peso</option>
+                    <option value="VND">🇻🇳 VND - Vietnamese Dong</option>
+                    <option value="ZAR">🇿🇦 ZAR - South African Rand</option>
+                </select>
+            </div>
+
+            <!-- Euro Country Selector (shows only when EUR is selected) -->
+            <div class="form-group" id="euroCountryGroup" style="display: none;">
+                <label for="euroCountry" class="form-label">
+                    <span class="label-icon">🇪🇺</span>
+                    Which Eurozone Country?
+                </label>
+                <select id="euroCountry" class="form-select">
+                    <option value="">Select country</option>
+                    <option value="FR">🇫🇷 France</option>
+                    <option value="ES">🇪🇸 Spain</option>
+                    <option value="IT">🇮🇹 Italy</option>
+                    <option value="DE">🇩🇪 Germany</option>
+                    <option value="NL">🇳🇱 Netherlands</option>
+                    <option value="PT">🇵🇹 Portugal</option>
+                    <option value="GR">🇬🇷 Greece</option>
+                    <option value="BE">🇧🇪 Belgium</option>
+                    <option value="AT">🇦🇹 Austria</option>
+                    <option value="IE">🇮🇪 Ireland</option>
+                    <option value="FI">🇫🇮 Finland</option>
+                    <option value="SK">🇸🇰 Slovakia</option>
+                    <option value="SI">🇸🇮 Slovenia</option>
+                    <option value="LT">🇱🇹 Lithuania</option>
+                </select>
+            </div>
+
+            <!-- Belgium Language Selector (shows only when Belgium is selected) -->
+            <div class="form-group" id="belgiumLanguageGroup" style="display: none;">
+                <label for="belgiumLanguage" class="form-label">
+                    <span class="label-icon">🗣️</span>
+                    Language in Belgium
+                </label>
+                <select id="belgiumLanguage" class="form-select">
+                    <option value="FR">French (Français)</option>
+                    <option value="NL">Dutch (Nederlands)</option>
+                </select>
+            </div>
+
+            <!-- Switzerland Language Selector (shows only when Switzerland is selected) -->
+            <div class="form-group" id="switzerlandLanguageGroup" style="display: none;">
+                <label for="switzerlandLanguage" class="form-label">
+                    <span class="label-icon">🗣️</span>
+                    Language in Switzerland
+                </label>
+                <select id="switzerlandLanguage" class="form-select">
+                    <option value="DE">German (Deutsch)</option>
+                    <option value="FR">French (Français)</option>
+                    <option value="IT">Italian (Italiano)</option>
+                </select>
+            </div>
+
+            <!-- Switzerland CHF Language Selector (shows only when CHF currency is selected) -->
+            <div class="form-group" id="chfLanguageGroup" style="display: none;">
+                <label for="chfLanguage" class="form-label">
+                    <span class="label-icon">🗣️</span>
+                    Language in Switzerland
+                </label>
+                <select id="chfLanguage" class="form-select">
+                    <option value="DE">German (Deutsch)</option>
+                    <option value="FR">French (Français)</option>
+                    <option value="IT">Italian (Italiano)</option>
+                </select>
+            </div>
+
+            <!-- Device Selection -->
+            <div class="form-group">
+                <label for="deviceType" class="form-label">
+                    <span class="label-icon">📱</span>
+                    Device Type
+                </label>
+                <select id="deviceType" class="form-select">
+                    <option value="iphone">iPhone (13/14/15 Pro)</option>
+                    <option value="samsung">Samsung Galaxy (S/Ultra)</option>
+                    <option value="pixel">Google Pixel</option>
+                </select>
+            </div>
+
+            <!-- Background Color Selection -->
+            <div class="form-group">
+                <label for="bgColor" class="form-label">
+                    <span class="label-icon">🎨</span>
+                    Background Style
+                </label>
+                <select id="bgColor" class="form-select">
+                    <option value="auto">Auto (Country Default)</option>
+                    <option value="deep-ocean">Deep Ocean (Blue)</option>
+                    <option value="sunset">Sunset (Orange)</option>
+                    <option value="forest">Forest (Green)</option>
+                    <option value="purple-night">Purple Night</option>
+                    <option value="slate">Slate (Grey)</option>
+                    <option value="rose">Rose (Pink)</option>
+                    <option value="custom">📸 Upload Custom Image</option>
+                </select>
+            </div>
+
+            <!-- Custom Background Upload (shows only when "Upload Custom Image" is selected) -->
+            <div class="form-group" id="customBgGroup" style="display: none;">
+                <label for="customBgFile" class="form-label">
+                    <span class="label-icon">🖼️</span>
+                    Choose Your Photo
+                </label>
+                <input type="file" 
+                       id="customBgFile" 
+                       class="form-file" 
+                       accept="image/jpeg,image/jpg,image/png,image/webp,image/*"
+                       capture="environment">
+                <p class="form-hint">
+                    📱 Best results: Portrait photos (1170×2532px)<br>
+                    📏 Max file size: 5MB<br>
+                    ⚖️ Use only photos you own or have permission to use
+                </p>
+                <div id="imagePreview" class="image-preview" style="display: none;">
+                    <img id="previewImg" src="" alt="Preview">
+                    <button type="button" class="clear-image-btn" id="clearImageBtn">✕ Clear</button>
+                </div>
+            </div>
+
+            <!-- PREMIUM FEATURES (Testing Mode - All Unlocked) -->
+            
+            <!-- Title Customization -->
+            <div class="form-group">
+                <label for="customTitle" class="form-label">
+                    <span class="label-icon">✏️</span>
+                    Custom Title (leave blank to remove)
+                </label>
+                <input type="text" 
+                       id="customTitle" 
+                       class="form-input" 
+                       placeholder="Quick Travel Reference">
+                <label for="titleColor" class="form-label" style="margin-top: 0.5rem;">Title Color</label>
+                <input type="color" id="titleColor" class="form-color" value="#ffffff">
+            </div>
+
+            <!-- Text Color -->
+            <div class="form-group">
+                <label for="textColor" class="form-label">
+                    <span class="label-icon">🎨</span>
+                    Main Text Color
+                </label>
+                <input type="color" id="textColor" class="form-color" value="#ffffff">
+            </div>
+
+            <!-- Overlay Darkness -->
+            <div class="form-group">
+                <label for="overlayDarkness" class="form-label">
+                    <span class="label-icon">🌓</span>
+                    Overlay Darkness: <span id="darknessValue">40%</span>
+                </label>
+                <input type="range" 
+                       id="overlayDarkness" 
+                       class="form-range" 
+                       min="0" 
+                       max="80" 
+                       value="40">
+            </div>
+
+            <!-- Number of Conversions -->
+            <div class="form-group">
+                <label for="conversionCount" class="form-label">
+                    <span class="label-icon">🔢</span>
+                    Number of Conversions
+                </label>
+                <select id="conversionCount" class="form-select">
+                    <option value="10">10 Conversions</option>
+                    <option value="15" selected>15 Conversions</option>
+                </select>
+            </div>
+
+            <!-- Phrases Section Toggle -->
+            <div class="form-group">
+                <label for="showPhrases" class="form-label">
+                    <span class="label-icon">💬</span>
+                    Show Phrases Section
+                </label>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <input type="checkbox" id="showPhrases" checked>
+                    <span>Include essential phrases</span>
+                </div>
+            </div>
+
+            <!-- Custom Footer -->
+            <div class="form-group">
+                <label for="customFooter" class="form-label">
+                    <span class="label-icon">📝</span>
+                    Custom Footer Text (optional)
+                </label>
+                <input type="text" 
+                       id="customFooter" 
+                       class="form-input" 
+                       placeholder="e.g., Sarah & John's Honeymoon 2026">
+                <label for="footerColor" class="form-label" style="margin-top: 0.5rem;">Footer Color</label>
+                <input type="color" id="footerColor" class="form-color" value="#fcd34d">
+            </div>
+
+            <!-- Generate Button -->
+            <button type="submit" class="generate-btn" id="generateBtn">
+                <span class="btn-text">Generate Wallpaper</span>
+                <span class="btn-icon">→</span>
+            </button>
+
+        </form>
+
+        <!-- Loading State -->
+        <div class="loading-state" id="loadingState" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Fetching live exchange rates...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error-message" id="errorMessage" style="display: none;"></div>
+
+    </div>
+
+    <!-- Hidden Canvas for Wallpaper Generation -->
+    <canvas id="wallpaperCanvas" style="display: none;"></canvas>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
