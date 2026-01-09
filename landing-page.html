@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Wallpaper Generator | Your trip essentials just one glance away</title>
+    <meta name="description" content="Make a custom wallpaper that shows currency conversions and local phrases for your trip abroad—just glance at your lockscreen instead of opening apps!">
+    
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Travel Wallpaper Generator">
+    <meta property="og:description" content="Make a custom wallpaper that shows currency conversions and local phrases for your trip abroad—just glance at your lockscreen instead of opening apps!">
+    <meta property="og:image" content="https://yourusername.github.io/travel-wallpaper-generator/demo-screenshot.jpg">
+    <meta property="og:url" content="https://yourusername.github.io/travel-wallpaper-generator/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Travel Wallpaper Generator">
+    <meta name="twitter:description" content="Make a custom wallpaper that shows currency conversions and local phrases for your trip abroad—just glance at your lockscreen instead of opening apps!">
+    <meta name="twitter:image" content="https://yourusername.github.io/travel-wallpaper-generator/demo-screenshot.jpg">
+    
+    <!-- Google Analytics - REPLACE 'G-XXXXXXXXXX' WITH YOUR MEASUREMENT ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: #f8fafc;
+        }
+        
+        /* Hero Section with Sky Blue Gradient */
+        .hero {
+            background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%);
+            color: white;
+            padding: 4rem 1.5rem;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero .tagline {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+        
+        .hero .explanation {
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #0284c7;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+        
+        /* Demo Image Section */
+        .demo-section {
+            padding: 3rem 1.5rem;
+            background: white;
+            text-align: center;
+        }
+        
+        .demo-image {
+            max-width: 350px;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin: 0 auto;
+        }
+        
+        /* App Embed Section */
+        .app-section {
+            padding: 3rem 1.5rem;
+            background: #f8fafc;
+        }
+        
+        .app-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .app-container h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #0f172a;
+        }
+        
+        .app-link {
+            display: block;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease;
+        }
+        
+        .app-link:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .app-link-button {
+            display: inline-block;
+            background: #0284c7;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        
+        /* Trust Section */
+        .trust-section {
+            padding: 3rem 1.5rem;
+            background: white;
+            text-align: center;
+        }
+        
+        .trust-section h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+        }
+        
+        .trust-points {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .trust-points li {
+            padding: 0.75rem 0;
+            font-size: 1.125rem;
+            list-style-position: inside;
+            color: #475569;
+        }
+        
+        /* Share Button */
+        .share-section {
+            padding: 2rem 1.5rem;
+            text-align: center;
+            background: #f8fafc;
+        }
+        
+        .share-button {
+            display: inline-block;
+            background: #0284c7;
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .share-button:hover {
+            background: #0369a1;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero .tagline {
+                font-size: 2rem;
+            }
+            
+            .hero .explanation {
+                font-size: 1.25rem;
+            }
+            
+            .demo-image {
+                max-width: 400px;
+            }
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Travel Wallpaper Generator</h1>
+        <p class="tagline">Your trip essentials just one glance away</p>
+        <p class="explanation">Make a custom wallpaper that shows currency conversions and local phrases for your trip abroad—just glance at your lockscreen instead of opening apps!</p>
+        <a href="#app" class="cta-button">Create your wallpaper</a>
+    </section>
+    
+    <!-- Demo Image Section -->
+    <section class="demo-section">
+        <img src="demo-screenshot.jpg" alt="Example travel wallpaper showing Thai Baht to British Pound currency conversions and essential Thai phrases on an iPhone lockscreen with palm tree background" class="demo-image">
+    </section>
+    
+    <!-- App Link Section -->
+    <section id="app" class="app-section">
+        <div class="app-container">
+            <h2>Create Your Wallpaper</h2>
+            <a href="index.html" class="app-link">
+                <p style="font-size: 1.125rem; margin-bottom: 1rem;">Click here to open the wallpaper generator</p>
+                <span class="app-link-button">Open Generator →</span>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Trust & Privacy Section -->
+    <section class="trust-section">
+        <h2>Your privacy matters</h2>
+        <ul class="trust-points">
+            <li>Photos are processed locally in your browser</li>
+            <li>No photo uploads are stored</li>
+            <li>No photos are logged or saved</li>
+            <li>Everything is free to use</li>
+        </ul>
+    </section>
+    
+    <!-- Share Section -->
+    <section class="share-section">
+        <button class="share-button" onclick="shareApp()">Share this tool</button>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p><a href="legal.html">Legal & Privacy</a></p>
+        <p style="margin-top: 0.5rem;">Built by <a href="https://github.com/navygrenadine1" target="_blank">@navygrenadine1</a></p>
+    </footer>
+    
+    <!-- Share Functionality -->
+    <script>
+        async function shareApp() {
+            const shareData = {
+                title: 'Travel Wallpaper Generator',
+                text: 'Make a custom wallpaper that shows currency conversions and local phrases for your trip abroad!',
+                url: window.location.href
+            };
+            
+            // Try native share API first
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                } catch (err) {
+                    // User cancelled or error occurred
+                }
+            } else {
+                // Fallback: copy to clipboard
+                try {
+                    await navigator.clipboard.writeText(window.location.href);
+                    alert('Link copied to clipboard!');
+                } catch (err) {
+                    alert('Unable to share. Copy this URL: ' + window.location.href);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
