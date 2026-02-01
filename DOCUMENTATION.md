@@ -125,17 +125,18 @@ All fonts and spacing scale proportionally to maintain the same visual design ac
 5. Wait 1-2 minutes, then refresh the page
 6. Your site URL will appear at the top (https://username.github.io/repo-name)
 
-### Update Buy Me a Coffee Link
+### Update PayPal Link
 
-Before deploying, update the coffee link in index.html:
+The app includes an optional PayPal donation link at the bottom. The link is already configured with a working PayPal.Me address.
 
-1. Sign up at https://www.buymeacoffee.com (free)
-2. Create your page and get your username
-3. In index.html, find the line with `buymeacoffee.com/yourusername`
-4. Replace `yourusername` with your actual username
-5. Save and upload to GitHub
+If you want to change it to your own PayPal:
 
-If you prefer not to accept donations, simply delete the entire "Buy Me a Coffee Section" from index.html (clearly marked with comments).
+1. Sign up at https://www.paypal.me and create your link
+2. In index.html, find the line with `paypal.me/EdwardMula1`
+3. Replace `EdwardMula1` with your PayPal.Me username
+4. Save and upload to GitHub
+
+If you prefer not to accept donations, simply delete the entire "PayPal Support Section" from index.html (clearly marked with comments).
 
 ### Testing
 
@@ -278,7 +279,7 @@ Requires JavaScript to be enabled.
 
 ## Donations
 
-This tool is completely free to use. If you find it helpful, there's an optional "Buy Me a Coffee" link at the bottom of the page. Donations are voluntary and appreciated but not required.
+This tool is completely free to use. If you find it helpful, there's an optional PayPal tip link at the bottom of the page. Donations are voluntary and appreciated but not required.
 
 ## Limitations
 
