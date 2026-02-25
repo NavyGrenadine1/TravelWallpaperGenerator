@@ -250,7 +250,7 @@ When you upload a photo:
 
 ### Exchange Rate API
 
-The application uses exchangerate-api.com with the free tier (1,500 requests per month). If this limit is reached, rate fetching will fail and display an error message.
+The application uses Frankfurter API, a free and open-source exchange rate service with no rate limits. The API provides daily currency data from the European Central Bank. No API key required.
 
 ## Color Scheme
 
@@ -284,7 +284,7 @@ This tool is completely free to use. If you find it helpful, there's an optional
 ## Limitations
 
 - Exchange rates are for reference only (verify with your bank before financial decisions)
-- Free API has a 1,500 requests/month limit
+- Exchange rates update once per day (via European Central Bank)
 - Internet connection required only for fetching rates (not for using uploaded photos or generating wallpapers)
 - Wallpapers are generated fresh each time (no saved templates)
 
@@ -326,4 +326,4 @@ Free for personal use. Use only photos you own or have permission to use. Donati
 
 ## Attribution
 
-Currency data provided by ExchangeRate-API.com
+Currency data provided by Frankfurter API (European Central Bank data)

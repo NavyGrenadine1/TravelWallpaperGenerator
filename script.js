@@ -1056,14 +1056,15 @@ form.addEventListener('submit', async (e) => {
 
 /**
  * Fetch live exchange rate from API
- * Using exchangerate-api.com (free tier: 1500 requests/month)
+ * Using Frankfurter API (free, unlimited, open source)
+ * Data from European Central Bank, updated daily
  */
 async function fetchExchangeRate(fromCurrency, toCurrency) {
     // Extract base currency from compound keys (e.g., 'EUR-FR' -> 'EUR', 'CHF-DE' -> 'CHF')
     const fromBase = fromCurrency.split('-')[0];
     const toBase = toCurrency.split('-')[0];
     
-    const API_URL = `https://api.exchangerate-api.com/v4/latest/${fromBase}`;
+    const API_URL = `https://api.frankfurter.app/latest?from=${fromBase}&to=${toBase}`;
     
     try {
         const response = await fetch(API_URL);
