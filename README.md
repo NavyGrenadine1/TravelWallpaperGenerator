@@ -1,7 +1,8 @@
-[README.md](https://github.com/user-attachments/files/24991154/README.md)
 # Travel Wallpaper Generator
 
 A simple browser tool for creating custom phone wallpapers with currency conversions and travel phrases. Never fumble with calculator apps again while traveling.
+
+**Live Demo:** https://navygrenadine1.github.io/TravelWallpaperGenerator/
 
 ## What It Does
 
@@ -24,7 +25,7 @@ Creates wallpapers optimized for iPhone, Samsung Galaxy, or Google Pixel. The la
 - Add personal footer text
 
 **Live Exchange Rates**
-Fetches current rates before generating each wallpaper. Uses ExchangeRate-API.com for up-to-date data.
+Fetches current rates before generating each wallpaper. Uses Frankfurter API for up-to-date data from the European Central Bank. Completely free with no rate limits.
 
 **Local Phrases with Pronunciation**
 Each destination includes 5 essential phrases: Hello, Thank you, Please, How much?, and Excuse me. All include phonetic pronunciations so you can actually say them.
@@ -84,7 +85,7 @@ No data collection. Photos are processed locally and never leave your browser. T
 
 ## Notes
 
-Exchange rates are for reference only. Always verify with your bank before making financial decisions. The free API tier allows 1,500 requests per month.
+Exchange rates are for reference only. Always verify with your bank before making financial decisions. Rates update daily from the European Central Bank.
 
 If you find this useful, there's an optional PayPal tip link at the bottom of the page.
 
